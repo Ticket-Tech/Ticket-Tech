@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TickeTech</title>
+    <link rel="stylesheet" href="styles/productos.css">
+</head>
+<body>
+    <div class="imagen-evento">
+        <img src="./assets/pdopamina.png" alt="dopaminamood">
+    </div>
+    <header>
+        <div class="logo-small">
+            <a href="index.html" class="link">
+                <img src="./assets/homee.png" alt="logo pequeño">
+            </a>
+        </div>
+    </header>
+
+    <div id="ticket-options">
+        <h2>Selecciona tus opciones</h2>
+        
+        <div id="ticket-cards">
+            <div id="entrada" class="card" onclick="toggleOption('entrada', 100)">Entrada</div>
+            <div id="estacionamiento" class="card" onclick="toggleOption('estacionamiento', 50)">Estacionamiento</div>
+            <div id="vip" class="card" onclick="toggleOption('vip', 200)">Acceso VIP</div>
+        </div>
+        
+    
+        <div id="user-info">
+            <h3>Ingresa tus datos</h3>
+            <form id="user-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+            </form>
+        </div>
+        <div id="ticket-info">
+            <h3>Total: $<span id="totalPrice">0</span></h3>
+        </div>    
+        <div id="payment-options">
+            <h2>Selecciona tu método de pago</h2>
+            <div id="payment-cards">
+                <div class="card" id="debit-card" onclick="selectPaymentMethod('debit-card')">
+                    <img src="./assets/debit-icon.png" alt="Tarjeta de Débito">
+                    <h3>Tarjeta de Débito</h3>
+                </div>
+                <div class="card" id="mercadopago" onclick="selectPaymentMethod('mercadopago')">
+                    <img src="./assets/mercadopago-icon.png" alt="MercadoPago">
+                    <h3>MercadoPago</h3>
+                </div>
+                <div class="card" id="personalpay" onclick="selectPaymentMethod('personalpay')">
+                    <img src="./assets/personalpay-icon.png" alt="Personal Pay">
+                    <h3>Personal Pay</h3>
+                </div>
+            </div>
+        </div>
+    
+
+    </div>
+
+    <!-- Modales para cada método de pago -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Información del Método de Pago</h2>
+            <p id="paymentInfo">Aquí irá la información específica del método de pago seleccionado.</p>
+        </div>
+    </div>
+
+    <script src="./scripts/recopilacionDatos.js"></script>
+</body>
+</html>
