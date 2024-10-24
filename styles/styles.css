@@ -1,0 +1,298 @@
+/* Reseteo de estilos globales */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: transparent;
+    z-index: 10;
+    transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #0a0a0a;
+    height: 70px;
+    padding-top: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+header.scrolled .inicio {
+    top: -20px; /* Mueve el botón más arriba cuando se hace scroll */
+}
+
+header .logo-small {
+    display: block;
+    transition: opacity 0.3s ease;
+    margin-top: 5px;
+}
+.inicio a{
+    text-decoration: none;
+    color: linear-gradient(to right, #ff77b4, #00c6ff);
+}
+.inicio .btn {
+    background: linear-gradient(to right, #00c6ff, #ff77b4);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadir transiciones */
+}
+
+.inicio .btn:hover {
+    background: linear-gradient(to right, #ff77b4, #00c6ff); /* Invertir el degradado */
+    transform: scale(1.05); /* Escala el botón un 5% */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Añade sombra al botón */
+    opacity: 0.9; /* Hace el botón un poco más translúcido */
+}
+
+
+
+header .inicio {
+    display: flex;
+    justify-content:flex-end;
+    gap: 15px;
+    margin-left: 0;
+    
+    
+}
+
+header .btn {
+    background-color: #fafaff;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 100px;
+    transition: 0.25s ease;
+    font-family: sans-serif;
+
+}
+
+header .btn:hover {
+    background-color: #3231d0;
+}
+
+/* Navigation Menu */
+.menu_nav {
+    display: flex;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu-list .link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.menu-list .link:hover::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #00c6ff, #ff77b4);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.menu-list .link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Zona 1 (Hero section) */
+.zona1 {
+    position: relative;
+    height: 100vh;
+}
+
+.zona1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.h-content {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translateX(-40%);
+    text-align: center;
+    color: white;
+}
+
+.h-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.h-texto {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    text-align: left;
+    font-family: sans-serif;
+}
+.logo-small img{
+    width: 150px;
+    height: 150px;
+    transition: transform 0.35 ease;
+    cursor: pointer;
+}
+.logo-small img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del logo al 110% */
+}
+.logo_large {
+    position: absolute;
+    top: 100px;/* Ajusta esto según donde quieras que aparezca */
+    right: 45%;
+    transform: translateX(); /* Centra el logo horizontalmente */
+    z-index: 1; /* Asegúrate de que sea mayor que el de la imagen de fondo */
+}
+
+
+.logo_large img {
+    width: 600px; /* O ajusta según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para centrar el contenido del artículo sin causar scroll horizontal */
+#evento.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%; /* Evita que se desborde del ancho de la pantalla */
+    padding: 20px; /* Ajusta el padding según sea necesario */
+    margin: 0 auto; /* Centra el artículo horizontalmente */
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+#evento .modal-content {
+    width: 100%; /* Haz que el contenido ocupe el ancho completo del contenedor */
+    max-width: 600px; /* Limita el ancho máximo del contenido */
+    padding: 20px;
+    box-sizing: border-box; /* Asegúrate de que el padding esté incluido en el ancho total */
+}
+
+#evento img {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    position: relative;
+    left: -400px;
+    width: 300px;
+    bottom: 40px;
+}
+
+#evento .subtitulo{
+    position: relative;
+    top: 80px;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+#evento .descripcion{
+    position: relative;
+    bottom: 250px;
+}
+.descripcion p{
+    font-size: 20px;
+    text-align:start ;
+    position: relative;
+    left: 100px;
+    padding: 5px;
+    transform: translateY(-90px);
+}
+.descripcion h1{
+    color: #00c6ff;
+    position: relative;
+    bottom: 90px;
+    transform: translateY(-60px);
+    font-size: 40px;
+}
+.descripcion button{
+    background: linear-gradient(to right, #00c6ff, #ff77b4);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;    
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadir transiciones */
+    width: 250px;
+    height: 40px;
+    transform: translateY(-60px);
+}
+
+/* Modales */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
