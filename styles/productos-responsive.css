@@ -1,0 +1,109 @@
+/* Estilos para pantallas de tablets (hasta 768px de ancho) */
+@media (max-width: 768px) {
+    .imagen-evento {
+        width: 100%;
+        height: auto; /* Mantiene la proporción */
+        object-fit: cover; /* Cubre el contenedor */
+        margin: 0; /* Elimina márgenes */
+        display: block; /* Evita espacio extra */
+    }
+
+    header {
+        height: auto; /* Asegúrate de que el header no tenga altura fija */
+        margin: 0; /* Elimina márgenes */
+        padding: 0; /* Elimina padding si es necesario */
+    }
+
+    #ticket-options {
+        padding: 10px; /* Ajusta según sea necesario */
+        margin: 0; /* Elimina márgenes en ticket-options */
+    }
+
+    #ticket-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 10px; /* Ajusta según sea necesario */
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .form-group input {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+/* Estilos para pantallas de móviles (hasta 480px de ancho) */
+@media (max-width: 480px) {
+    .imagen-evento {
+        height: auto; /* Cambia a auto para que la imagen no cubra todo */
+        width: 100%; /* Mantiene la imagen en el ancho total */
+        object-fit: cover; /* Mantiene proporciones y cubre el contenedor */
+        display: block; /* Elimina el espacio extra debajo de la imagen */
+        margin: 0; /* Asegúrate de que no haya margen */
+    }
+header{
+    transform: translateY(-5px);
+}
+    /* Asegúrate de que el contenedor tenga espacio */
+    #ticket-options {
+        padding: 10px; /* Ajusta el padding según sea necesario */
+        margin: 0; /* Evita margen que podría causar problemas */
+    }
+
+    #ticket-cards {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0; /* Asegúrate de que no haya padding extra */
+    }
+
+    .card {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #user-info {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .form-group input {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
