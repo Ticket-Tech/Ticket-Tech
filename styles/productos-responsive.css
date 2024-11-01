@@ -1,4 +1,4 @@
-/* Estilos para pantallas de tablets (hasta 768px de ancho) */
+
 @media (max-width: 768px) {
     .imagen-evento {
         width: 100%;
@@ -109,4 +109,17 @@
     .modal-content {
         width: 90%;
     }
+
+    #payment-cards img {
+        width: 30px;
+        height: auto;
+       transform: translateX(100px);
+      }
+      
+      .cards h3{
+        font-size: 14px;
+        margin: 0;
+       transform: translateX(120px);
+      }
+
 }
