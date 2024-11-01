@@ -12,6 +12,7 @@
         height: auto; /* Asegúrate de que el header no tenga altura fija */
         margin: 0; /* Elimina márgenes */
         padding: 0; /* Elimina padding si es necesario */
+        width: 100%;
     }
 
     #ticket-options {
