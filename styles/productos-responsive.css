@@ -1,4 +1,3 @@
-
 @media (max-width: 768px) {
     .imagen-evento {
         width: 100%;
@@ -50,8 +49,32 @@
     .modal-content {
         width: 90%;
     }
-}
 
+    #payment-cards {
+        display: flex; /* Usa flexbox para la alineación horizontal */
+        justify-content: center; /* Centra los elementos en el contenedor */
+        align-items: center; /* Centra verticalmente */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+
+    .cards {
+        display: flex; /* Mantiene la imagen y el texto en una fila */
+        flex-direction: row; /* Asegura que se alineen horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        margin: 0 10px; /* Espacio entre las tarjetas */
+    }
+
+    .cards img {
+        width: 50px; /* Ajusta según sea necesario */
+        height: auto; /* Mantiene la proporción */
+        margin-right: 10px; /* Espacio entre la imagen y el texto */
+    }
+
+    .cards h3 {
+        margin: 0; /* Elimina márgenes */
+        text-align: center; /* Centra el texto */
+    }
+}
 
 /* Estilos para pantallas de móviles (hasta 480px de ancho) */
 @media (max-width: 480px) {
@@ -110,16 +133,20 @@
         width: 90%;
     }
 
-    #payment-cards img {
-        width: 30px;
+    .cards{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .cards img {
+        width: 30px; /* Ajusta el tamaño según sea necesario */
         height: auto;
-       transform: translateX(100px);
-      }
-      
-      .cards h3{
+    }
+
+    .cards h3 {
         font-size: 14px;
         margin: 0;
-       transform: translateX(120px);
-      }
-
+    }
 }
