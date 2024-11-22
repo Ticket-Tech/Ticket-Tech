@@ -16,37 +16,53 @@ function toggleOption(option, price) {
     document.getElementById('totalPrice').textContent = totalPrice;
 }
 
-// Modal para los métodos de pago
-const modal = document.getElementById("paymentModal");
-const modalContent = document.getElementById("paymentInfo");
-const span = document.getElementsByClassName("close")[0];
+// Guardar los datos y redirigir al link de pago correspondiente
+async function saveAndRedirect() {
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const correo = document.getElementById("correo").value;
 
-// Función para seleccionar el método de pago y mostrar el modal
-function selectPaymentMethod(method) {
-    let info = "";
-    switch (method) {
-        case 'debit-card':
-            info = "Has seleccionado pagar con tarjeta de débito.";
-            break;
-        case 'mercadopago':
-            info = "Has seleccionado pagar con MercadoPago.";
-            break;
-        case 'personalpay':
-            info = "Has seleccionado pagar con Personal Pay.";
-            break;
+    // Determinar el tipo de compra y el link de pago
+    let paymentLink;
+    let referenceCode;
+
+    if (selectedOptions['entrada'] && selectedOptions['vip']) {
+        paymentLink = "https://www.mercadopago.com/link-entrada-vip";
+        referenceCode = "ENTRADA_VIP";
+    } else if (selectedOptions['vip']) {
+        paymentLink = "https://www.mercadopago.com/link-vip";
+        referenceCode = "VIP";
+    } else if (selectedOptions['entrada']) {
+        paymentLink = "https://www.mercadopago.com/link-entrada";
+        referenceCode = "ENTRADA";
+    } else {
+        alert("Por favor selecciona al menos una opción para continuar.");
+        return;
     }
-    modalContent.textContent = info;
-    modal.style.display = "block";
-}
 
-// Cerrar el modal cuando se haga clic en la X
-span.onclick = function() {
-    modal.style.display = "none";
-}
+    const purchaseData = {
+        nombre,
+        apellido,
+        correo,
+        referenceCode,
+        total: totalPrice
+    };
 
-// Cerrar el modal si se hace clic fuera del contenido
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    try {
+        const response = await fetch('/api/create-purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(purchaseData)
+        });
+
+        if (response.ok) {
+            window.location.href = paymentLink;
+        } else {
+            alert("Hubo un error al registrar tu compra. Intenta de nuevo.");
+        }
+    } catch (error) {
+        console.error("Error en la conexión con el backend:", error);
     }
 }

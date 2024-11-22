@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra</title>
+    <link rel="stylesheet" href="styles/confirmation.css">
+</head>
+<body>
+    <header>
+        <h1>¡Gracias por tu compra!</h1>
+    </header>
+
+    <div class="container">
+        <h2>Compra exitosa, <span id="buyerName"></span>!</h2> <!-- Aquí debe ir el nombre dinámico -->
+        <p>Si deseas adquirir estacionamiento, puedes hacerlo aquí:</p>
+
+        <!-- Botón para redirigir a link de estacionamiento si hay espacios -->
+        <button id="parking-button" onclick="purchaseParking()">Comprar Estacionamiento</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="confirmation.js"></script>
+</body>
+</html>
